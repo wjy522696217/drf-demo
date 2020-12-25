@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from .serializers import StudentSerializer
 from django.http import HttpResponse,JsonResponse
-from students.models import Student
+from students.serializers import Student
 
 class StudentView(View):
     def get1(self,request):
@@ -19,6 +19,11 @@ class StudentView(View):
     def get(self,request):
         student1 = Student.objects.all().first()
         print(student1)
+
+        Serializer = StudentSerializer(instance=student1)
+        print(Serializer.data)
+        # return HttpResponse("ok")
+        return JsonResponse(Serializer.data)
 
 
 

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Student
-class StudentModelSerializer(serializers.ModelSerializer):
+class Studentserializer(serializers.Serializer):
     # 序列化器它本身就是一个类，声明完不会自动调用，我们需要在视图中进行调用
     """学生信息序列化器"""
     # 1. 字段声明

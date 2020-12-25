@@ -6,4 +6,4 @@ class StudentSerializer(serializers.Serializer):
     name = serializers.CharField()
     age = serializers.IntegerField()
     sex = serializers.BooleanField()
-    description1 = serializers.TextField()
+    description = serializers.CharField()
